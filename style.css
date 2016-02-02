@@ -1,0 +1,197 @@
+/*
+ Theme Name:   SOCY Hub
+ Theme URI:    http://
+ Description:  WP-Bootstrap Child Theme for the SOCY Hub
+ Author:       Tom Woodward
+ Author URI:   http://bionicteaching.com
+ Template:     wp-bootstrap
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  socy-hub
+*/
+
+a {
+	color:#BE3F21;
+}
+
+a:hover {
+	background-color: #f8f8f8;
+	color: #000;
+}
+
+.response p, .response p a{
+	color:black;
+	text-decoration: none;
+}
+
+
+.page-header{
+	padding-bottom: 5px;
+    margin: 20px 0 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #efefef;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+h1.page-title, h1.page-header{
+    padding: 0px;
+    font-weight: 200;
+    margin: 0px;
+}
+
+
+.response {
+	display: inline-block;
+    width: 100%;
+    border: 1px solid #efefef;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px 5px 5px 10px;
+}
+
+.response:hover {
+	background-color: #efefef;
+} 
+
+
+.banner {
+    position: relative;
+    height:250px;
+    margin-bottom: 55px;
+
+}
+.banner img {
+    display: block;
+    width: 100%;
+    max-width: 1200px; /* corresponds to max height of 450px */
+    margin: 0 auto;
+}
+
+.navbar .container, .collapse, .navbar-collapse, .navbar-responsive-collapse, .navbar, .navbar-default, .navbar-fixed-top {
+	background-color: ##f8f8f8;
+}
+
+#sidebar1 {
+	margin-top: 20px;
+}
+
+.btn-success {
+    color: #000;
+    background-color: #f8f8f8;
+    border-color: #efefef;
+   }
+
+ .btn-success:hover{
+ 	background-color: #efefef;
+ 	color: #000;
+ 	border-color: #f8f8f8;
+ }
+
+
+#main article img {
+    float: left;
+    margin-right: 12px;
+}
+
+.trio {
+    background-color: #FFBA00;
+    padding-top: 20px;
+}
+
+
+
+.slider {
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    padding:4px;
+    background-color: #fff;
+}
+
+.news {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding:5px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.news_excerpt, .news_excerpt a {
+    color:#000;
+    text-decoration: none;
+}
+
+.news_excerpt a:hover {
+    color:#000;
+    text-decoration: none;
+    background-color: #efefef;
+}
+
+.news img {
+    border:1px solid #efefef;
+    padding: 3px;
+}
+
+.news:hover {
+    background-color: #efefef;
+}
+
+.news h3 {
+    margin-top: -15px;
+}
+
+
+.caro-caps h2 {
+    font-size: 3em;
+    text-transform: uppercase;    
+}
+
+.caro-caps p{
+    padding-right: 15px;
+}
+
+.dark {
+    background-color: #424242;
+}
+
+.outline {
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    padding:6px;
+}
+
+.outline h2 {
+    margin-top: 0px;
+}
+
+.front-day {
+    font-size: 2em;
+    display: inline;
+}
+
+.front-month {
+    font-size: 2em;
+    display: inline-block;
+}
+
+.event-title, .event-title a {
+    color:#000;
+}
+@media(max-width:767px){
+    .listing-item {
+    display: inline-block;
+    width: 100%;
+    border: 2px solid #BE3F21;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px 5px 5px 10px;
+}
+
+}
+
