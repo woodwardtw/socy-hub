@@ -11,7 +11,9 @@ function theme_enqueue_styles() {
 }
 
 add_image_size( 'front-page-slide', 800, 400, true );
+add_image_size( 'circle-ppl', 300, 300, true );
 
+//custom people post type
 add_action( 'init', 'create_posttype' );
 function create_posttype() {
   register_post_type( 'socy_person',
@@ -22,6 +24,7 @@ function create_posttype() {
       ),
       'public' => true,
       'has_archive' => true,
+      'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
       'rewrite' => array('slug' => 'people'),
     )
   );
