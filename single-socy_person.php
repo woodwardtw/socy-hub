@@ -10,15 +10,16 @@
 							
 						<div class="row">
 						<div class="col-md-4">
+						<div class="single-person-circle">
+							<?php the_post_thumbnail( 'circle-ppl', array('class' => 'circle-ppl aligncenter') ); ?>
+							</div>
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
 						<header>
-						
-							<?php the_post_thumbnail( 'circle-ppl' ); ?>
+							
 							
 							<div class="page-header"><h1 class="single-title person" itemprop="headline"><?php the_title(); ?></h1></div>
 							
-							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('F jS, Y', '','', FALSE); ?></time> <?php _e("by", "wpbootstrap"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "wpbootstrap"); ?> <?php the_category(', '); ?>.</p>
 						
 						</header> <!-- end article header -->
 					
@@ -32,13 +33,14 @@
 							?>
 							</div>
 							<div class="col-md-4">
-								courses feed - field returns <?php the_field('courses')?>
 								<?php 
-								$the_tags = get_field('courses');
+								//$the_tags = get_field('courses');
+								$the_person = get_field('author');
 								$args = array( 
 									'posts_per_page' => 5,
 									'order' => 'DSC',
-									'tag__in' => $the_tags,
+									'author_name' => $the_person, 
+									//'tag__in' => $the_tags,
 									);
 								$the_query = new WP_Query( $args );
 								// The Loop
@@ -46,7 +48,7 @@
 									while ( $the_query->have_posts() ) {
 										$the_query->the_post();
 										echo '<a href="' . get_the_permalink() . '"><div class="news">';
-										echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' )) . '<br/><h3>' . get_the_title() . '</h3><div class="news_excerpt">' . get_the_excerpt() . " . . . <br/> (click for more)";
+										echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft circle-ppl' )) . '<br/><h3>' . get_the_title() . '</h3><div class="bio_excerpt">' . get_the_excerpt() . " . . . <br/> (click for more)";
 										echo '</div></div></a>';
 									}
 								} else {
@@ -66,7 +68,7 @@
 						
 						<footer>
 			
-							<?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","wpbootstrap") . ':</span> ', ' ', '</p>'); ?>
+							<?php the_person('<p class="tags"><span class="tags-title">' . __("Tags","wpbootstrap") . ':</span> ', ' ', '</p>'); ?>
 							
 							<?php 
 							// only show edit button if user has permission to edit posts

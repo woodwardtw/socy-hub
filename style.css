@@ -98,7 +98,7 @@ h1.page-title, h1.page-header{
 }
 
 .trio {
-    background-color: #FFBA00;
+    background-color: #fff;
     padding-top: 20px;
 }
 
@@ -106,7 +106,6 @@ h1.page-title, h1.page-header{
 
 .slider {
     border: 1px solid #e8e8e8;
-    border-radius: 5px;
     padding:4px;
     background-color: #fff;
 }
@@ -117,16 +116,17 @@ h1.page-title, h1.page-header{
     width: 100%;
     padding:5px;
     border: 1px solid #e8e8e8;
-    border-radius: 5px;
     background-color: #fff;
 }
 
-.news_excerpt, .news_excerpt a {
+.bio_excerpt, .bio_excerpt a {
     color:#000;
     text-decoration: none;
+    background-color: #fff;
+    padding: 5px;
 }
 
-.news_excerpt a:hover {
+.bio_excerpt a:hover {
     color:#000;
     text-decoration: none;
     background-color: #efefef;
@@ -185,8 +185,29 @@ h1.page-title, h1.page-header{
 
 .circle-ppl {
         border-radius: 50%;
-        border:solid 3px solid #424242;
+        border:solid 3px #424242;
         text-align: center;
+        padding-left: auto;
+        padding-right: auto;
+        background-color: #fff;
+        display: block;
+}
+
+.single-person-circle {
+    align-content: center;
+    background-color: #fff;
+
+}
+
+.people {
+    padding-bottom: 20px;
+    background-color: #efefef;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.bio-names h3{
+    text-align: center;
 }
 @media(max-width:767px){
     .listing-item {

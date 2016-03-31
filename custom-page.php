@@ -12,19 +12,18 @@
 <?php get_header(); ?>
 <div id="content" class="clearfix row dark">		
 	<div id="main" class="col col-md-10 col-md-offset-1 clearfix" role="main">
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>				
+	<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 						
-							<header>
+		<header>
 							
-							<!--<div class="page-header"><h1><?php the_title(); ?></h1></div>-->
+		<!--<div class="page-header"><h1><?php the_title(); ?></h1></div>-->
 						
-							</header> <!-- end article header -->
+		</header> <!-- end article header -->
 						
-							<section class="post_content">
-							<div class="wide-box-holder slider">
-								<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<section class="post_content">
+			<div class="wide-box-holder slider">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 									  <!-- Indicators -->
 									  <ol class="carousel-indicators">
 									    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -32,7 +31,7 @@
 									    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 									  </ol>						   
 						   
-									<div class="carousel-inner">
+					<div class="carousel-inner">
 						               <?php
 										 $class_active="active";
 
@@ -47,17 +46,17 @@
 										if( $my_query->have_posts() ) {
 										  while ($my_query->have_posts()) : $my_query->the_post(); ?>
 										             
-										<div class="item <?php echo $class_active ;?>">
+						<div class="item <?php echo $class_active ;?>">
 										    <?php the_post_thumbnail('front-page-slide'); ?>
 
-						   					<div class="container">
-						                 		<div class="caro-caps">
+						   	<div class="container">
+						        <div class="caro-caps">
 						                 			<?php echo '<a href="' . get_the_permalink() . '">'?>
 						                  			<h2> <?php the_title(); ?> </h2></a>
 						                  			<p> <?php the_excerpt();?> </p>
-						              			</div>
-						            		</div>   
-						        		</div>
+						        </div>
+						    </div>   
+						</div>
 					                   <?php
 
 										 $class_active="";
@@ -65,11 +64,42 @@
 										}
 										wp_reset_query();  // Restore global post data stomped by the_post().
 										?>
-                 				</div>
-                 			</div>
-                 		</div>		
-					</section> <!-- end article section -->
+                	</div>
+                </div>
+
+            </div>		
+		</section> <!-- end article section -->
 				</article>
+			</div>
+		</div>
+		<div class="row trio people">
+			<div class="col-md-10 col-md-offset-1">
+				<?php
+
+					// The Reviews Query + the hashtag - shows only the first two submitted
+					$args = array( 
+							'post_type'=> 'socy_person',
+							'post_status' => 'publish',
+							'posts_per_page' => 3,
+							'orderby' => 'rand',
+							);
+						$the_query = new WP_Query( $args );
+						// The Loop
+						if ( $the_query->have_posts() ) {
+							while ( $the_query->have_posts() ) {
+								$the_query->the_post();
+								echo '<a href="' . get_the_permalink() . '"><div class="people col-md-4">';
+								echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft circle-ppl' )) . '<br/><h3>' . get_the_title() . '</h3><div class="bio_excerpt">' . get_the_excerpt() . " . . . <br/> (click for more)";
+								echo '</div></div></a>';
+							}
+						} else {
+							// no posts found
+							echo 'No posts found';
+						}
+						/* Restore original Post Data */
+						wp_reset_postdata();
+
+						?> 
 			</div>
 		</div>
 
@@ -95,7 +125,7 @@
 							while ( $the_query->have_posts() ) {
 								$the_query->the_post();
 								echo '<a href="' . get_the_permalink() . '"><div class="news">';
-								echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' )) . '<br/><h3>' . get_the_title() . '</h3><div class="news_excerpt">' . get_the_excerpt() . " . . . <br/> (click for more)";
+								echo  the_post_thumbnail('thumbnail' , array( 'class' => 'alignleft' )) . '<br/><h3>' . get_the_title() . '</h3><div class="bio_excerpt">' . get_the_excerpt() . " . . . <br/> (click for more)";
 								echo '</div></div></a>';
 							}
 						} else {

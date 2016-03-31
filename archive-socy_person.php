@@ -8,9 +8,9 @@
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
 						
-								<div class="col-md-4">
+								<div class="col-md-4 people">
 									<?php the_post_thumbnail( 'circle-ppl' , array( 'class' => 'circle-ppl aligncenter' )); ?>
-									<h3 class="h2 circle-ppl"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+									<h3 class="bio-names"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
 								</div>
 					
